@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccess.BAL.DTOS.BankAccounts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace DataAccess.BAL.DAOS.Interfaces
 {
     public interface IBankAccountDAO
     {
+        public List<GetBankAccount> GetAll(string? OpenDate, string? AccountName);
     }
 }

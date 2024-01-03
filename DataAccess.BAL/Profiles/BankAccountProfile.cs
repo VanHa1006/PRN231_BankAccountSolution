@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using DataAccess.BAL.DTOS.BankAccounts;
+using DataAccess.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +11,9 @@ namespace DataAccess.BAL.Profiles
 {
     public class BankAccountProfile :Profile
     {
-        public BankAccountProfile() { }
+        public BankAccountProfile() 
+        {
+            CreateMap<BankAccount, GetBankAccount>().ReverseMap();        
+        }
     }
 }

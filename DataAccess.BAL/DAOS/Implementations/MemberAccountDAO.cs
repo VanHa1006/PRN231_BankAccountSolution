@@ -39,6 +39,24 @@ namespace DataAccess.BAL.DAOS.Implementations
                 }
                 GetMemberAccount getMemberAccount = this._mapper.Map<GetMemberAccount>(existedAccount);
                 //Generation Token
+                switch (getMemberAccount.UserRole)
+                {
+                    case "1":
+                        {
+                            getMemberAccount.UserRole = "Administrator";
+                            break;
+                        }
+                    case "2":
+                        {
+                            getMemberAccount.UserRole = "Manager";
+                            break;
+                        }
+                    case "3":
+                        {
+                            getMemberAccount.UserRole = "Staff";
+                            break;
+                        }
+                }
                 return GenerateToken(getMemberAccount, jwtAuth);
 
             }
